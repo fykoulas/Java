@@ -15,12 +15,12 @@ public class HelloWorld {
          */
         System.out.println("Hello Coding Factory!");    // Prints Hello Coding Factory
         System.out.print("Hello World!");
-        System.out.println();
-        int booksNumber;
+        int booksNumber = 3;
         int age = 2;
         boolean isRaining;
         int sum = 10;
         final double PI = 3.14;
         System.out.print(PI);
+        System.out.println(" Η ηλικία είναι " + (age) + " και οι αριθμοί βιβλίων είναι " + (booksNumber));
     }
 }
