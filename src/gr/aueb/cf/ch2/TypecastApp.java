@@ -8,7 +8,7 @@ public class TypecastApp {
         int num1 = 10; //int literals είναι int -> 32bit
         long num2 = 20L;
 
-        num1 = (int)num2;
+        num1 = (int) num2;
 
     }
 }
