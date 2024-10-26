@@ -8,7 +8,8 @@ import java.util.Random;
 public class RandomApp {
     public static void main(String[] args) {
 // να δω λίγο πάλι τι υπολογίζει η Math.random
-        int die =  (int)(Math.random() * 6) + 1;
-        System.out.println(die);
+        int die1 =  (int)(Math.random() * 6) + 1;
+        int die2 =  (int)(Math.random() * 6) + 1;
+        System.out.println("Η ζαριά που έριξες είναι: " + die1 + " και " + die2);
     }
 }

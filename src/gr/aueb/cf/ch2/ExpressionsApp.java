@@ -20,8 +20,8 @@ public class ExpressionsApp {
         mul = num1 * num2;
         div = num1 / num2;
 
-        result1 = num1++;
-        result2 = ++num1;
+        result1 = num1++; //post-increment: πρώτα γίνεται assigned to num1 στο result1 και μετά το num1 αυξάνεται κατά 1.
+        result2 = ++num1; //pre-increment: πρώτα γίνεται τo αυξάνεται κατά 1 και μετά γίνεται assigned στο result1.
 
         System.out.println();
 
