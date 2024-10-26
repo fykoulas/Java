@@ -22,5 +22,6 @@ public class HelloWorld {
         final double PI = 3.14;
         System.out.print(PI);
         System.out.println(" Η ηλικία είναι " + (age) + " και οι αριθμοί βιβλίων είναι " + (booksNumber));
+        System.out.println(" Η ηλικία είναι " + (age) + " και οι αριθμοί βιβλίων είναι " + (booksNumber));
     }
 }
