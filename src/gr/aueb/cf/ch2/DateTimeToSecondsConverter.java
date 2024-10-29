@@ -1,5 +1,6 @@
 package gr.aueb.cf.ch2;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
