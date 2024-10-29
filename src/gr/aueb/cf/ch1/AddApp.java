@@ -10,11 +10,11 @@ import java.sql.SQLOutput;
 
 public class AddApp {
     public static void main(String[] args) {
-        //Δήλωση και Αρχικοποίηση κάποιων Μεταβλητών (όχι όλων)
+        //Δήλωση και Αρχικοποίηση Μεταβλητών
         int num1 = 5;
         int num2 = 121;
-        int result;
-        int result2;
+        int result = 0;
+        int result2 = 0;
         double result3;
 
         //Εντολές
