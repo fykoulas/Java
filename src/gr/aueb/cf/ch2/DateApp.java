@@ -1,10 +1,9 @@
 package gr.aueb.cf.ch2;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class PrintApp {
+public class DateApp {
     public static void main(String[] args) {
         int day = 8;
         int month = 7;
