@@ -12,7 +12,7 @@ public class Stars10App {
         n = in.nextInt();
 
         while (i <= n) {
-            System.out.println("*");
+            System.out.print("*");
             i++;
         }
     }
