@@ -18,7 +18,7 @@ public class Sum10 {
 
         while (i <= n) {
             sum1 += i;
-            mul1 = mul1 * i;
+            mul1 = mul1 * i; // ή mul1 *= i;
             i++;
         }
         System.out.println("Το άθροισμα των " + n + " πρώτων αριθμών είναι: " + sum1);
