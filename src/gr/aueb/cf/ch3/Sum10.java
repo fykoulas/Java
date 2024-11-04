@@ -1,4 +1,7 @@
 package gr.aueb.cf.ch3;
+/**
+ * Calculate the sum and mul of the first n integers
+ */
 
 import java.util.Scanner;
 
@@ -14,7 +17,7 @@ public class Sum10 {
         n = in.nextInt();
 
         while (i <= n) {
-            sum1 = sum1 + i;
+            sum1 += i;
             mul1 = mul1 * i;
             i++;
         }
