@@ -1,5 +1,9 @@
 package gr.aueb.cf.ch3;
 
+/**
+ * It is snowing iff it is raining AND temp<0
+ */
+
 import java.util.Scanner;
 
 public class SnowingApp {
