@@ -15,6 +15,6 @@ public class SentinelApp {
             System.out.println("Please provide a number (100 for quit)");
             num = in.nextInt();
         }
-        System.out.printf("You have %d iterations", iterations);
+        System.out.printf("You have %d iterations excluding the last one", iterations);
     }
 }
