@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class MenuDoWhile {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int choice;
+        int choice = 0;
 
         do {
             System.out.println("Please select one of the following");
@@ -16,7 +16,7 @@ public class MenuDoWhile {
             System.out.println("2. Delete");
             System.out.println("3. Quit");
 
-        } while (choice != 3);
+        }  while (choice != 3) ;
 
         System.out.println("Thanks for using the Menu app");
     }
