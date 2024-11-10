@@ -29,8 +29,8 @@ public class PowerApp {
         System.out.println("Δώσε μου τη δύναμη b: ");
         b = in.nextInt();
 
-        while (i <=a) {
-            result = result * b;
+        while (i <=b) {
+            result = result * a;
             i++;
 
         }
