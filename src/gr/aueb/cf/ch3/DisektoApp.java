@@ -8,6 +8,7 @@ public class DisektoApp {
         boolean isDisekto = false;
         boolean diaireitaiMe100 = false;
         boolean diaireitaiMe400 = false;
+        boolean diaireitaiMe4 = false;
         int days = 0;
         int etos = 0;
 
@@ -15,9 +16,10 @@ public class DisektoApp {
         etos = in.nextInt();
 
         diaireitaiMe100 = (etos % 100 == 0);
-        diaireitaiMe400 = (etos % 400 == 0);
+        diaireitaiMe400 = (etos % 400 != 0);
+        diaireitaiMe4 = (etos % 4 == 0);
 
-        if ((diaireitaiMe400) && (diaireitaiMe100 || diaireitaiMe400)) {
+        if ((diaireitaiMe4 && !diaireitaiMe100) || (diaireitaiMe400)) {
             isDisekto = true;
         }
 
