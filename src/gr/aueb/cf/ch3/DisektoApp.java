@@ -16,7 +16,7 @@ public class DisektoApp {
         etos = in.nextInt();
 
         diaireitaiMe100 = (etos % 100 == 0);
-        diaireitaiMe400 = (etos % 400 != 0);
+        diaireitaiMe400 = (etos % 400 == 0);
         diaireitaiMe4 = (etos % 4 == 0);
 
         if ((diaireitaiMe4 && !diaireitaiMe100) || (diaireitaiMe400)) {
