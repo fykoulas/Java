@@ -11,7 +11,7 @@ public class AddApp {
         int sub = 0;
 
         sum = add(a, b);
-        sub = AddApp.sub(a, b); // sub(a, b);
+        sub = sub(a, b); // Add.App.sub(a, b);
 
         System.out.println(sum);
         System.out.println(sub);
