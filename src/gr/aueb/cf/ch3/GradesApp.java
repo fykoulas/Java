@@ -42,7 +42,7 @@ public class GradesApp {
             System.out.println("Excellent");
         } else if (average >= 7) {
             System.out.println("Very good");
-        } else if (average >= 5); {
+        } else if (average >= 5) {
             System.out.println("Good");
         }
     }

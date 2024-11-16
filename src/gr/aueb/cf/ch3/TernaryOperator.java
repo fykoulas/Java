@@ -16,7 +16,7 @@ public class TernaryOperator {
 
 //        if (num>=0) abs = num;
 //        else abs = -num;
-        abs = (num>= 0) ? num : -num;
+          abs = (num>= 0) ? num : -num; // condition ? value_if_true : value_if_false;
 
         System.out.println("The absolute number is: " + abs);
     }

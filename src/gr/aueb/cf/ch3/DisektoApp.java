@@ -9,7 +9,6 @@ public class DisektoApp {
         boolean diaireitaiMe100 = false;
         boolean diaireitaiMe400 = false;
         boolean diaireitaiMe4 = false;
-        int days = 0;
         int etos = 0;
 
         System.out.println("Δώστε ένα έτος: ");
