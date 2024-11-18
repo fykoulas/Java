@@ -1,34 +1,26 @@
 package gr.aueb.cf.ch6;
 
 /**
- * Εύρεση στοιχείου πίνακα.
+ * Copies the reference of the array.
+ * it is a shallow copy. There are side
+ * effects
  */
-public class ArraySearch {
+public class ArrayReferenceCopy {
 
     public static void main(String[] args) {
 
         int[] arr = {1, 2, 3, 4, 5};
-        final int SECRET = 4;
-        boolean found = false;
+        int[] arrRefCopy = arr;         // Shallow Copy
 
-//        for (int i = 0; i < arr.length; i++) {
-//            if (arr[i] == SECRET) {
-//                found = true;
-//                break;
-//            }
-//        }
-
-        for (int el : arr) {
-            if (el == SECRET) {
-                found = true;
-                break;
-            }
+        for (int el : arrRefCopy) {
+            System.out.print(el + " ");
         }
 
-        if (found) {
-            System.out.println("SECRET found!");
-        } else {
-            System.out.println("SECRET not found.");
+        arrRefCopy[4] = 100;
+        System.out.println();
+
+        for (int el : arr) {
+            System.out.print(el + " ");
         }
     }
 }

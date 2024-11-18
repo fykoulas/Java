@@ -1,35 +1,34 @@
 package gr.aueb.cf.ch6;
 
-/**
- * Δήλωση και αρχικοποίηση ενός πίνακα.
- * Populate ένα πίνακα
- * - new
- * - unsized init
- * - array initializer
- * - print τα στοιχεία ενός πίνακα
- */
-public class ArrayInit {
+import java.util.Arrays;
+
+public class ArrayDeepCopy {
 
     public static void main(String[] args) {
-        int[] arr = new int[3];                     // declare and initialization
-        int[] arr2 = { 1, 2, 3, 4, 5 };             // unsized initialization
-        int[] arr3;
-        arr3 = new int[] {1, 2, 3, 4, 5};           // array initializer
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] copied;
 
-        // Populate
-        arr[0] = 5;
-        arr[1] = 10;
-        arr[2] = 4;
+        copied = arrDeepCopy(arr);
+    }
 
-        // traverse
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+    /**
+     * it creates a fresh-copy (deep copy) of an
+     * input array.
+     *
+     * @param source    the source array.
+     * @return          the copied array.
+     */
+    public static int[] arrDeepCopy(int[] source) {
+
+        int[] destination = new int[source.length];
+
+        for (int i = 0; i < source.length; i++) {
+            destination[i] = source[i];
         }
+//        System.arraycopy(source, 0, destination, 0, source.length);
+//        destination = Arrays.copyOf(source, source.length);
+//        destination = Arrays.copyOfRange(source, 0, source.length);
 
-        // Enhanced for
-        for (int el : arr3) {
-            System.out.print(el + " ");
-        }
-
+        return destination;
     }
 }

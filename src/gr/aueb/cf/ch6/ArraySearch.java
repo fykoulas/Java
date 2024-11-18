@@ -1,65 +1,34 @@
 package gr.aueb.cf.ch6;
 
-public class ArrayMinMax2 {
+/**
+ * Εύρεση στοιχείου πίνακα.
+ */
+public class ArraySearch {
 
     public static void main(String[] args) {
 
-    }
+        int[] arr = {1, 2, 3, 4, 5};
+        final int SECRET = 4;
+        boolean found = false;
 
-    public static int getMinPosition(int[] arr) {
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] == SECRET) {
+//                found = true;
+//                break;
+//            }
+//        }
 
-        if (arr == null || arr.length < 1) return -1;
-
-        int minPosition = 0;
-        int minValue = Integer.MAX_VALUE;
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < minValue) {
-                minPosition = i;
-                minValue = arr[i];
+        for (int el : arr) {
+            if (el == SECRET) {
+                found = true;
+                break;
             }
         }
-        return minPosition;
-    }
 
-    public static int getMaxPosition(int[] arr) {
-
-        if (arr == null || arr.length < 1) return -1;
-
-        int maxPosition = 0;
-        int maxValue = Integer.MIN_VALUE;
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > maxValue) {
-                maxPosition = i;
-                maxValue = arr[i];
-            }
+        if (found) {
+            System.out.println("SECRET found!");
+        } else {
+            System.out.println("SECRET not found.");
         }
-        return maxPosition;
-    }
-
-    /**
-     * Overloaded.
-     *
-     * @param arr
-     * @param low
-     * @param high
-     * @return
-     */
-    public static int getMinPosition(int[] arr, int low, int high) {
-        if (arr == null || arr.length < 1) return -1;
-        if (low < 0 || high > arr.length - 1) return -1;
-        if (low > high) return -1;
-
-        int minPosition = low;
-        int minValue = arr[low];
-
-        for (int i = low; i <= high; i++) {
-            if (arr[i] < minValue) {
-                minPosition = i;
-                minValue = arr[i];
-            }
-        }
-        return minPosition;
     }
 }
