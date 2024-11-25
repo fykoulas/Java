@@ -11,7 +11,7 @@ public class StrBuilderApp {
         StringBuilder sb = new StringBuilder();
 
         timeStart = System.currentTimeMillis();
-        for (int i = 1; i <= 50_000; i++) {
+        for (int i = 1; i <= 100_000; i++) {
             concatStr = concatStr + i;
         }
 
