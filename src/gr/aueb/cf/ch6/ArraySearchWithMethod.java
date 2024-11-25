@@ -9,12 +9,12 @@ public class ArraySearchWithMethod {
         int[] arr = {1, 2, 3, 4, 7};
         int position;
 
-        position = getPosition(arr, 17);
+        position = getPosition(arr,7);
 
         if (position == - 1) {
             System.out.println("To στοιχείο δεν βρέθηκε");
         } else {
-            System.out.printf("Value: %d, Position: %d", arr[position], (position + 1));
+            System.out.printf("Η τιμή %d βρέθηκε στη θέση %d", arr[position], (position + 1));
         }
     }
 

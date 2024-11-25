@@ -9,7 +9,7 @@ package gr.aueb.cf.ch6;
  */
 public class ArrayInit {
     public static void main(String[] args) {
-        int[] arr = new int[3];                 // declare and init
+        int[] arr = new int[10];                 // declare and init
         int[] arr2 = {1,2,3,4,5};               //unsized init
         int[] arr3 = new int[] {1,2,3,4,5};     //array initializer
 
@@ -24,8 +24,9 @@ public class ArrayInit {
             System.out.print(arr[i] + " ");
         }
 
-        for (int el: arr) {
-            System.out.print(el + " ");
+        System.out.println();
+        for (int item : arr) {
+            System.out.print(item + " ");
         }
 
     }
