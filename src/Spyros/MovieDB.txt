@@ -1,0 +1,159 @@
+1.Εμφανίστε ένα κατάλογο με το επώνυμο και το όνομα των ηθοποιών των οποίων το επώνυμο αρχίζει με 'Κ'. Ο κατάλογος θα πρέπει να είναι ταξινομημένος αλφαβητικά με βάση το επώνυμο. 
+SELECT * FROM actors
+WHERE lname LIKE 'Κ%'
+ORDER BY lname
+
+2. Εμφανίστε ένα κατάλογο με τον τίτλο και το έτος παραγωγής των ταινιών, των οποίων η παραγωγή έγινε μεταξύ του 1990 και του 2007. Ο κατάλογος να είναι ταξινομημένος με βάση το έτος παραγωγής σε φθίνουσα διάταξη.
+SELECT title, pyear FROM movies
+WHERE pyear > 1990 AND pyear < 2007
+ORDER BY pyear DESC
+
+3. Εμφανίστε ένα κατάλογο με τον τίτλο της ταινίας, το επώνυμο και το όνομα του σκηνοθέτη για όλες τις ταινίες με χώρα παραγωγής την Ελλάδα (κωδικός Ελλάδας 'GRC'). Ο κατάλογος πρέπει να είναι ταξινομημένος αλφαβητικά με βάση το επώνυμο των σκηνοθετών.
+SELECT title, lname, fname 
+FROM movies JOIN directors ON movies.did = directors.did 
+AND pcountry = 'GRC' 
+ORDER BY lname
+
+4. Εμφανίστε ένα κατάλογο με τον τίτλο και το έτος παραγωγής των ταινιών που σκηνοθέτησε ο σκηνοθέτης με επώνυμο 'Σακελλάριος'.
+SELECT title, pyear 
+	FROM movies JOIN directors ON movies.did = directors.did
+	AND lname = 'Σακελλάριος'
+
+5. Εμφανίστε ένα κατάλογο με τους τίτλους και το έτος παραγωγής των ταινιών στις οποίες έχει πρωταγωνιστεί ο ηθοποιός με επώνυμο 'Eastwood'
+SELECT title, pyear
+	FROM movies 
+	JOIN movie_actor ON movies.mid = movie_actor.mid 
+	JOIN actors ON movie_actor.actid = actors.actid
+	WHERE actors.lname = 'Eastwood'
+
+6. Εμφανίστε το επώνυμο και το όνομα των πρωταγωνιστών της ταινίας με τίτλο 'Amelie'
+SELECT actors.lname, actors.fname
+	FROM actors
+	JOIN movie_actor ON actors.actid = movie_actor.actid
+	JOIN movies ON movies.mid = movie_actor.mid
+	WHERE movies.title = 'Amelie'
+
+7. Υπολογίστε τον αριθμό των ταινιών που διαθέτουν αντίτυπο σε 'DVD'. 
+SELECT COUNT (DISTINCT mid) 
+	FROM copies
+	WHERE cmedium = 'DVD'
+
+8. Βρείτε το συνολικό αριθμό των αντιτύπων (όλων των ταινιών) που διατίθενται σε 'DVD'.
+SELECT COUNT (mid) AS συνολικός_αριθμός_αντιτύπων
+	FROM copies
+	WHERE cmedium = 'DVD'
+
+9. Εμφανίστε την τιμή του ακριβότερου 'DVD'.
+SELECT max(price) AS ακριβότερο_DVD
+	FROM copies
+	WHERE cmedium = 'DVD'
+
+10. Βρείτε την συνολική αξία όλων των αντιτύπων (όλων των ταινιών) που διατίθενται σε 'BLURAY'.
+SELECT sum(price) AS συνολική_αξία_όλων_των_αντιτύπων
+	FROM copies
+	WHERE cmedium = 'BLU RAY'
+
+11. Εμφανίστε έναν κατάλογο με το ονοματεπώνυμο των σκηνοθετών και τον αριθμό των ταινιών που έχει σκηνοθετήσει ο κάθε ένας.
+SELECT d.lname, d.fname, COUNT(m.mid) AS Αριθμός_Ταινιών
+	FROM directors d
+	LEFT JOIN movies m ON d.did = m.did
+	GROUP BY d.did, d.lname, d.fname
+	ORDER BY Αριθμός_Ταινιών DESC
+
+Το αποτέλεσμα της παραπάνω εντολής αποτελείται από τις εγγραφές των δύο
+πινάκων που έχουν την ίδια τιμή στο κοινή στήλη did, καθώς επίσης και τις
+εγγραφές του πίνακα directors που δεν πληρούν την συνθήκη της σύζευξης. Ο
+πίνακας directors βρίσκεται αριστερά του τελεστή LEFT JOIN.
+
+12. Βρείτε τον αριθμό των ταινιών που έχει πρωταγωνιστεί ο ηθοποιός με επώνυμο 'Παπαγιαννόπουλος'.
+SELECT COUNT(ma.mid) AS Αριθμός_Ταινιών
+	FROM actors a
+	JOIN movie_actor ma ON a.actid = ma.actid
+	WHERE a.lname = 'Παπαγιαννόπουλος'
+	ORDER BY Αριθμός_Ταινιών DESC
+
+13. Εμφανίστε ένα κατάλογο με το επώνυμο και το όνομα των ηθοποιών που έχουν
+πρωταγωνιστεί σε ταινίες των οποίων η παραγωγή τους δεν έχει γίνει στην Ελλάδα (κωδικός Ελλάδας 'GRC').
+SELECT DISTINCT a.lname, a.fname
+	FROM actors a
+	JOIN movie_actor ma ON a.actid = ma.actid
+	JOIN movies m ON m.mid = ma.mid
+	WHERE pcountry != 'GRC'
+	ORDER BY lname
+
+14. Εμφανίστε ένα κατάλογο με τους τίτλους των ταινιών στις οποίες έχουν συμπρωταγωνιστεί οι ηθοποιοί με επώνυμο 'Κούρκουλος' και 'Καρέζη' αντίστοιχα. Ο τίτλος κάθε ταινίας θα πρέπει να εμφανίζεται μόνο μία φορά στον κατάλογο.
+SELECT m.title
+	FROM movies m
+	JOIN movie_actor ma ON ma.mid = m.mid
+	JOIN actors a ON ma.actid = a.actid
+	WHERE a.lname = 'Κούρκουλος'
+
+	INTERSECT
+
+SELECT m.title
+	FROM movies m
+	JOIN movie_actor ma ON ma.mid = m.mid
+	JOIN actors a ON ma.actid = a.actid
+	WHERE a.lname = 'Καρέζη'
+
+15. Εμφανίστε ένα κατάλογο με τους τίτλους των ταινιών στις οποίες έχει πρωταγωνιστεί η ηθοποιός με επώνυμο 'Καρέζη' και στις οποίες δεν συμμετείχε ο ηθοποιός με επώνυμο 'Κούρκουλος'.
+SELECT m.title
+	FROM movies m
+	JOIN movie_actor ma ON ma.mid = m.mid
+	JOIN actors a ON ma.actid = a.actid
+	WHERE a.lname = 'Καρέζη'
+
+		EXCEPT
+
+SELECT m.title
+	FROM movies m
+	JOIN movie_actor ma ON ma.mid = m.mid
+	JOIN actors a ON ma.actid = a.actid
+	WHERE a.lname = 'Κούρκουλος'	
+
+16. Εμφανίστε ένα κατάλογο με τους τίτλους των ταινιών που ανήκουν τόσο στην κατηγορία 'Κωμωδία' όσο και στην κατηγορία 'Αισθηματική'. Ο τίτλος κάθε ταινίας θα πρέπει να εμφανίζεται μόνο μία φορά στον κατάλογο.
+SELECT DISTINCT m.title
+	FROM movies m
+	JOIN movie_cat mc ON mc.mid = m.mid
+	JOIN categories c ON mc.catid = c.catid
+	WHERE c.category = 'Κωμωδία'
+
+	INTERSECT
+
+SELECT DISTINCT m.title
+	FROM movies m
+	JOIN movie_cat mc ON mc.mid = m.mid
+	JOIN categories c ON mc.catid = c.catid
+	WHERE c.category = 'Αισθηματική'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
