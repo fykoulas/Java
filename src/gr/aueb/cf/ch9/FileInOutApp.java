@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class FileInOutApp {
 
     public static void main(String[] args) {
-        File inFd = new File("C:/tmp/file7.txt");
-        File outFd = new File("C:/tmp/file7-out.txt");
+        File inFd = new File("C:/Users/spyro/Desktop/file7.txt");
+        File outFd = new File("C:/Users/spyro/Desktop/file7-out.txt");
         String line;
         String[] tokens;
 
