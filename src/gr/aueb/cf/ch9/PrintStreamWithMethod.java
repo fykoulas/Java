@@ -11,7 +11,7 @@ public class PrintStreamWithMethod {
     public static void main(String[] args) {
 
         //try (PrintStream ps = new PrintStream("C:/tmp/file7-ps.txt", StandardCharsets.UTF_8)) {
-        try (PrintStream ps = new PrintStream(new FileOutputStream("C:/tmp/file7-ps.txt", true),
+        try (PrintStream ps = new PrintStream(new FileOutputStream("C:/Users/spyro/Desktop/file7.txt", true),
                 true, StandardCharsets.UTF_8)) {
             printMessage(ps, "Hello Coding Factory!");
             printMessage(System.out, "Hello CF!");
