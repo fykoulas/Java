@@ -13,7 +13,7 @@ public class ArrayAdd {
 
     public static int[] addOne(int[] arr){
         int[] arrOut;
-        int currentSum;
+        int currentSum;qwe
         int carry = 1;
 
         if (arr == null) throw new IllegalArgumentException("Error. Array must not be null");
