@@ -6,14 +6,20 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.*;
 
-public class AdvancedWordFrequencyCounter {
-    public static void main(String[] args) throws InterruptedException, ExecutionException, IOException {
+public class AdvancedWordFrequencyCounterWithExceptionHandling {
+    public static void main(String[] args) {
         String filePath = "C:\\Users\\spyro\\IdeaProjects\\Java\\src\\Spyros\\MovieDB.txt"; // Replace with your file path
         int topN = 5; // Top N most frequent words
         int numThreads = 4;
 
         // Read file into a single string
-        String text = Files.readString(Paths.get(filePath));
+        String text = null;
+        try {
+            text = Files.readString(Paths.get(filePath));
+        } catch (IOException e) {
+            System.err.println("Error reading the file: " + e.getMessage());
+            return; // Exit the program if reading fails
+        }
 
         // Split text into words
         List<String> words = Arrays.stream(text.split("\\W+"))
@@ -38,8 +44,12 @@ public class AdvancedWordFrequencyCounter {
         // Merge results from all threads
         Map<String, Integer> mergedWordCounts = new ConcurrentHashMap<>();
         for (Future<Map<String, Integer>> future : futures) {
-            future.get().forEach((word, count) ->
-                    mergedWordCounts.merge(word, count, Integer::sum));
+            try {
+                future.get().forEach((word, count) -> mergedWordCounts.merge(word, count, Integer::sum));
+            } catch (InterruptedException | ExecutionException e) {
+                System.err.println("Error during task execution: " + e.getMessage());
+                return; // Exit the program if there was an error during task execution
+            }
         }
 
         executor.shutdown();
@@ -52,8 +62,7 @@ public class AdvancedWordFrequencyCounter {
 
         // Display results
         System.out.println("Top " + topN + " most frequent words:");
-        topWords.forEach(entry ->
-                System.out.printf("%s: %d%n", entry.getKey(), entry.getValue()));
+        topWords.forEach(entry -> System.out.printf("%s: %d%n", entry.getKey(), entry.getValue()));
     }
 
     // Helper method to count words in a list
