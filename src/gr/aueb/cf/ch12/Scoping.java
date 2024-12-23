@@ -8,14 +8,14 @@ public class Scoping {
         int b = 20;
         int result = 0;
 
-        result = add(a,b);
+        result = add(a, b);
 
         System.out.println(result);
     }
 
     public static int add(int a, int b) {
         return a + b;
-}
+    }
 
     public static int div(int a, int b) {
         int result = 0;
