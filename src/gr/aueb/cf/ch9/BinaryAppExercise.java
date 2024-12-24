@@ -30,7 +30,6 @@ public class BinaryAppExercise {
                 counter++;
             }
             String fileExtension = filenameOut.substring(filenameOut.lastIndexOf("."));
-            System.out.printf("Το αρχείο με μέγεθος %.1fKB (%d bytes) αντιγράφηκε επιτυχώς\n", (counter / 1024.0), counter);
             System.out.println("Το πλήρες όνομα του αρχικού αρχείου είναι: " + Paths.get(filename).toAbsolutePath());
             System.out.println("Το πλήρες όνομα του τελικού αρχείου είναι: " + Paths.get(filenameOut).toAbsolutePath());
             System.out.println("Η κατάληξη των αρχείων είναι: " + fileExtension);
