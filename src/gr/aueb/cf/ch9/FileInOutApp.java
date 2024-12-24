@@ -1,9 +1,6 @@
 package gr.aueb.cf.ch9;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
@@ -16,7 +13,7 @@ public class FileInOutApp {
         String[] tokens;
 
         try (Scanner in = new Scanner(inFd);
-             PrintStream ps = new PrintStream(outFd, StandardCharsets.UTF_8)) {
+             PrintWriter ps = new PrintWriter(outFd, StandardCharsets.UTF_8)) {
             while (in.hasNextLine()) {
                 line = in.nextLine();
                 tokens = line.split("\\s+");
