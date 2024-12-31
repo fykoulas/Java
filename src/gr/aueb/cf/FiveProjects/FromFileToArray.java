@@ -3,8 +3,7 @@ package gr.aueb.cf.FiveProjects;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
+
 
 public class FromFileToArray {
     public static void main(String[] args) {
@@ -19,7 +18,7 @@ public class FromFileToArray {
                 tokens = line.split(",+\\s*");
 
             for (String token : tokens)  {
-                 
+                System.out.print(token.trim() + " ");
             }
 
             }

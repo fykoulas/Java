@@ -12,7 +12,7 @@ public class BufferedReaderApp {
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
 
-        try (BufferedReader bf = new BufferedReader(new FileReader("C:/Users/spyro/Desktop/file7.txt"))) {
+        try (BufferedReader bf = new BufferedReader(new FileReader("C:/Users/spyro/Desktop/allnumbers.txt"))) {
             String line = "";
 
             while (( line = bf.readLine() ) != null) {
