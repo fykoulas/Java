@@ -5,6 +5,10 @@ import java.util.*;
 import java.util.regex.*;
 import java.util.stream.*;
 
+/*
+Φιλτράρει csv με email τα οποία είναι άκυρα/fake/test και επιστρέφει csv με πολύ λιγότερα λάθη
+ */
+
 public class EmailFilter {
 
     // Regular expressions
