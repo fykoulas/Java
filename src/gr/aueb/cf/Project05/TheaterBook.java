@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TheaterBook {
     // Θέατρο με 30 σειρές και 12 στήλες
-    private boolean[][] seats = new boolean[30][12];
+    private final boolean[][] seats = new boolean[30][12];
 
     // Μέθοδος για κράτηση θέσης
     public void book(char column, int row) {
