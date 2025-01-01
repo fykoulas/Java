@@ -1,4 +1,4 @@
-package gr.aueb.cf.FiveProjects;
+package Spyros;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

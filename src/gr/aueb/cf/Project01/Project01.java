@@ -1,4 +1,4 @@
-package gr.aueb.cf.FiveProjects;
+package gr.aueb.cf.Project01;
 
 import java.io.*;
 import java.util.ArrayList;
