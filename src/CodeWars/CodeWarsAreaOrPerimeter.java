@@ -1,4 +1,4 @@
-package Spyros;
+package CodeWars;
 
 import java.util.Random;
 
