@@ -14,11 +14,12 @@ public static void main(String[] args) {
 }
 
 public static int areaOrPerimeter (int l, int w) {
-    if  (l == w){
-        return (l * w);
-        } else {
-        return 2 * (l + w);
-        }
+    return l == w ? l * w : (l + w) * 2;
+//    if  (l == w){
+//        return (l * w);
+//        } else {
+//        return 2 * (l + w);
+//        }
     }
 
 }
