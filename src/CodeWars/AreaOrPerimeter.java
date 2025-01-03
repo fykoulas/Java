@@ -2,7 +2,7 @@ package CodeWars;
 
 import java.util.Random;
 
-public class CodeWarsAreaOrPerimeter {
+public class AreaOrPerimeter {
 public static void main(String[] args) {
     Random random = new Random();
 

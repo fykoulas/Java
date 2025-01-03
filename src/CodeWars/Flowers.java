@@ -7,7 +7,7 @@ Write a function that will take the number of petals of each flower and return t
 
 import java.util.Random;
 
-public class CodeWarsFlowers {
+public class Flowers {
     public static void main(String[] args) {
 
         Random random = new Random();
